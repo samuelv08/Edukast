@@ -38,7 +38,7 @@ export default function Navbar({ view, setView, onNew, darkMode, onToggleTheme, 
               disabled={!remindersSupported}
               aria-label={remindersEnabled ? 'Desactivar recordatorios' : 'Activar recordatorios'}
               aria-pressed={remindersEnabled}
-              title={remindersPermission === 'denied' ? 'Notificaciones bloqueadas por el navegador' : remindersEnabled ? 'Desactivar recordatorios' : 'Activar recordatorios'}
+              title={remindersPermission === 'denied' ? 'Notificaciones bloqueadas: revisa Ajustes' : remindersEnabled ? 'Desactivar recordatorios' : 'Activar recordatorios'}
             >
               <i className={`bi ${remindersEnabled ? 'bi-bell-fill' : 'bi-bell'}`} aria-hidden="true"></i>
             </button>

@@ -1,0 +1,10 @@
+{
+  "appId": "com.samuelv08.edukast",
+  "appName": "EDUKAST",
+  "webDir": "dist",
+  "plugins": {
+    "LocalNotifications": {
+      "presentationOptions": ["sound", "banner", "list"]
+    }
+  }
+}
