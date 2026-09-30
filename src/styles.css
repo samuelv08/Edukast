@@ -1,0 +1,71 @@
+:root {
+  --brand: #28735c;
+  --brand2: #39866d;
+  --page-bg: #f6f7f5;
+  --surface: #fff;
+  --line: #e2e7e3;
+  --ink: #252c28;
+  --muted: #717a74;
+}
+
+html[data-theme="dark"] {
+  --brand: #82c5a6;
+  --brand2: #9bd5ba;
+  --page-bg: #191e1b;
+  --surface: #222824;
+  --line: #343d37;
+  --ink: #edf1ee;
+  --muted: #a0aaa3;
+}
+
+body { font-family: 'DM Sans', sans-serif; background: var(--page-bg); color: var(--ink); }
+#root { min-height: 100vh; }
+.brand-bg { background: var(--surface) !important; }
+.brand-text, .text-primary { color: var(--brand) !important; }
+.brand-logo { color: var(--brand) !important; font-weight: 700; font-size: 1.2rem; }
+.navbar { min-height: 64px; }
+.navbar .nav-link.btn { color: var(--muted); text-decoration: none; }
+.navbar .nav-link.btn:hover, .navbar .nav-link.active { color: var(--brand); }
+.navbar-user { color: var(--muted); }
+.btn-primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+html[data-theme="dark"] .btn-primary { color: #17221c; }
+.btn-primary:hover, .btn-outline-primary:hover { background: var(--brand2); border-color: var(--brand2); color: #fff; }
+.btn-outline-primary { color: var(--brand); border-color: var(--brand); }
+.card { color: var(--ink); background-color: var(--surface); border: 1px solid var(--line); border-radius: 8px; box-shadow: none !important; }
+.fade-in { animation: fadeIn .2s ease-out; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.stat-card, .task-card, .subject-card { transition: border-color .15s ease; }
+.stat-card:hover, .task-card:hover, .subject-card:hover { border-color: #a9b8af; }
+.stat-icon { width: 36px; height: 36px; display: grid; place-items: center; font-size: 1.2rem; background: transparent !important; color: var(--brand) !important; }
+.task-card { border-left: 2px solid #aab4ad; animation: none; }
+.prio-alta { border-left-color: #dc6b6b; }
+.prio-media { border-left-color: #d5a64b; }
+.prio-baja { border-left-color: #aab4ad; }
+.task-card.done { background: var(--surface); }
+.task-card.done .task-name { text-decoration: line-through; color: var(--muted); }
+.subject-card { cursor: pointer; }
+.subject-card.active { border-color: var(--brand); outline: 1px solid var(--brand); }
+.filter-option { border-color: var(--line); color: var(--muted); border-radius: 5px !important; }
+.filter-option:hover { border-color: var(--brand); color: var(--brand); }
+.filter-option.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+.cal-cell { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 5px; min-height: 56px; padding: 4px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; font-size: .85rem; }
+.cal-cell:hover { background: var(--page-bg); }
+.cal-cell.today { border-color: var(--brand); font-weight: 700; }
+.cal-cell.sel { background: var(--brand); border-color: var(--brand); color: #fff; }
+.dots { display: flex; gap: 2px; min-height: 8px; }
+.dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; }
+.dot.pend { background: #4b8ec7; } .dot.soon { background: #d5a64b; } .dot.late { background: #dc6b6b; } .dot.done { background: #39866d; }
+
+.donut { width: 144px; height: 144px; border-radius: 50%; display: grid; place-items: center;
+  background: conic-gradient(var(--brand) calc(var(--pct) * 1%), var(--line) 0); position: relative; }
+.donut::before { content: ''; position: absolute; inset: 14px; background: var(--surface); border-radius: 50%; }
+.donut span { position: relative; font-size: 1.8rem; font-weight: 700; }
+.progress-bar { transition: width .4s ease; }
+.modal { background: rgba(0,0,0,.35); overflow-y: auto; }
+html[data-theme="dark"] .bg-white { background-color: var(--surface) !important; }
+html[data-theme="dark"] .cal-cell:hover { background: #2a322d; }
+html[data-theme="dark"] .task-card.done { background: var(--surface); }
+@media (max-width: 576px) { .cal-cell { min-height: 46px; font-size: .75rem; } }
